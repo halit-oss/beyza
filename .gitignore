@@ -1,0 +1,3 @@
+# test/doğrulama klasörü (yerel denemeler), node modülleri
+.test/
+node_modules/

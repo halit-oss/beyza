@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070a14" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Beyza için küçük bir gökyüzü." />
+  <title>Beyza · küçük bir gökyüzü</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+  <!-- Yıldız alanı (canvas) + ışık halkaları -->
+  <canvas id="gokyuzu" aria-hidden="true"></canvas>
+  <div class="atmosfer" aria-hidden="true"></div>
+
+  <main>
+    <!-- 1) GİRİŞ -->
+    <section class="bolum giris" id="giris">
+      <p class="ust-yazi">küçük bir gökyüzü</p>
+      <h1 class="isim" id="isim" aria-label="Beyza">Beyza</h1>
+      <p class="giris-metin">
+        Bunu sana bırakmak istedim.<br />
+        Sessiz, sakin ve sadece senin.
+      </p>
+      <p class="kaydir" aria-hidden="true">
+        <span>kaydır</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+             stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+             stroke-linejoin="round">
+          <path d="M12 5v14M6 13l6 6 6-6" />
+        </svg>
+      </p>
+    </section>
+
+    <!-- 2) TAKIMYILDIZ -->
+    <section class="bolum takimyildiz" id="takimyildiz">
+      <p class="ust-yazi">takımyıldız</p>
+      <h2 class="baslik">Bu takımyıldızın adı: <em>biz</em>.</h2>
+
+      <div class="gokyuzu-karti">
+        <svg
+          id="kalpSvg"
+          class="kalp-svg"
+          viewBox="0 0 100 100"
+          role="img"
+          aria-label="Yıldızlardan oluşan bir kalp takımyıldızı"
+        ></svg>
+      </div>
+
+      <p class="aciklama">
+        Yıldızları ben seçmedim.<br />
+        Sadece birleştirdim.
+      </p>
+    </section>
+
+    <!-- 3) NOTLAR -->
+    <section class="bolum notlar" id="notlar">
+      <p class="ust-yazi">üç küçük yıldız</p>
+      <h2 class="baslik">Bazı şeyleri yüksek sesle söylemek gerek.</h2>
+
+      <ul class="not-listesi">
+        <li class="not-karti">
+          <span class="not-yildiz" aria-hidden="true">✦</span>
+          <h3>Gülüşün</h3>
+          <p>Kötü geçen bir günü tek başına iyi edebiliyor. Bunu bilmeni istedim.</p>
+        </li>
+        <li class="not-karti">
+          <span class="not-yildiz" aria-hidden="true">✦</span>
+          <h3>Sesin</h3>
+          <p>Günün neresinde olursam olayım, tanıdığım en huzurlu ses.</p>
+        </li>
+        <li class="not-karti">
+          <span class="not-yildiz" aria-hidden="true">✦</span>
+          <h3>Yanımda oluşun</h3>
+          <p>En sıradan günü bile sonradan anlatılacak bir ana çeviriyorsun.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4) KAPANIŞ -->
+    <section class="bolum kapanis" id="kapanis">
+      <div class="kapanis-ic">
+        <p class="ust-yazi">son olarak</p>
+        <h2 class="baslik buyuk">İyi ki varsın.</h2>
+        <p class="aciklama">
+          Bu gökyüzü senin, ne zaman istersen aç.<br />
+          Yıldızlar hep burada olacak.
+        </p>
+        <p class="imza" id="imza">— Halit</p>
+      </div>
+      <footer class="dipnot">
+        <span>bir yıldız kaydığında yakalamayı dene</span>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Kayar yıldız (dokunulabilir) -->
+  <button type="button" class="kayan-yildiz" id="kayanYildiz" hidden>
+    <span class="kayan-iz" aria-hidden="true"></span>
+    <span class="sr-only">Kayan yıldızı yakala</span>
+  </button>
+
+  <!-- Gizli not penceresi -->
+  <div class="perde" id="perde" hidden>
+    <div class="not-pencere" role="dialog" aria-modal="true" aria-labelledby="notBaslik">
+      <p class="ust-yazi" id="notBaslik">bir dilek</p>
+      <p class="pencere-metin" id="pencereMetin"></p>
+      <button type="button" class="kapat" id="kapat">kapat</button>
+    </div>
+  </div>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
